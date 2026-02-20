@@ -1,4 +1,4 @@
-# Inciso A
+#Ejemplos
 
 ## Compilación, ejecución e identificación de operaciones
 
@@ -34,62 +34,69 @@ javac TCPClient.java
 Primero se ejecutó el servidor: 
 
 ```bash
-java UDPServer
+java TCPServer
 ```
 
 En una segunda terminal se ejecutó el cliente:
 
 ```bash
-java UDPClient Hola localhost
+java TCPClient 
 ```
 
-El cliente envía el mensaje “Hola” al servidor, y el servidor responde enviando el mismo mensaje de vuelta.
+El cliente efectúa una comunicación e intercambio de datos con el servidor.
 
 ### Ejecución del Ejemplo 2 
 
 Primero se ejecutó el servidor: 
 
 ```bash
-java UDPDiscardServer
+java TCPServer
 ```
 
 En una segunda terminal se ejecutó el cliente:
 
 ```bash
-java UDPDiscardClient localhost
+java TCPClient
 ```
 
-El cliente envía mensajes al servidor. El servidor recibe los mensajes y los imprime en pantalla, pero no envía ninguna respuesta al cliente.
+El cliente efectúa una comunicación e intercambio de datos con el servidor.
 
 ### Operaciones que permiten la interaccion
 
 #### En el Cliente
 
-- new DatagramSocket()
+- Socket s = new Socket(serverHost, serverPort);
 Crea el socket del cliente.
 
-- InetAddress.getByName()
-Obtiene la dirección IP del servidor.
+- String serverHost = "localhost"
+Crea una cadena con el host del servidor.
 
-- new DatagramPacket()
-Construye el paquete con el mensaje.
+- int serverPort = 7896
+Asigna un entero con el puerto del servidor
 
-- send()
-Envía el datagrama al servidor.
+- DataInputStream in = new DataInputStream(s.getInputStream());
+Crea un flujo de datos de entrada y recibe información mediante el socket
 
-- receive()
-Recibe el datagrama de respuesta (solo en el ejemplo 1).
+- DataOutputStream out = new DataOutputStream(s.getOutputStream());
+Crea un flujo de datos de salida y envía información mediante el socket
+
+- out.writeUTF();
+Envía información al servidor codificada en UTF
+
+- in.readUTF();
+Lee información del servidor codificada en UTF
 
 #### En el Servidor
 
-- new DatagramSocket(puerto)
-Abre el puerto para escuchar solicitudes.
+- ServerSocket listenSocket = new ServerSocket(serverPort);
+Crea un socket de escucha que establecerá una conexión con algún cliente
 
-- receive()
-Recibe los paquetes enviados por el cliente.
+- Socket clientSocket;
+Crea el socket del cliente
 
-- getAddress() y getPort()
-Obtienen la dirección y el puerto del cliente.
+- DataInputStream in = new DataInputStream(clientSocket.getInputStream());
+Crea un flujo de entrada de datos que envía el cliente
 
-- send()
-Envía la respuesta (solo en el ejemplo 1).
+- DataOutputStream out = new DataOutputStream(clientSocket.getOutputStream());
+Crea un flujo de salida de datos hacía el cliente
+
