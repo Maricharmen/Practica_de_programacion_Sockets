@@ -1,9 +1,12 @@
-# Práctica de Programación 01. Sockets UDP
+# Práctica de Programación 02. Sockets TCP
 
 ## Instrucciones
 
-Para los ejemplos 1 y 2 de los Sockets UDP:
+Utiliza los ejemplos de código de sockets TCP en Java para implementar la conversión de temperaturas pero a través de un intercambio de mensajes:
 
-- Compila y ejecuta los códigos de los programas cliente y servidor. Revisa el código e identifica las operaciones que permiten la interacción entre el servidor y el cliente en cada uno de los ejemplos. 
-
-- Elabora una versión de cliente y servidor basados en sockets UDP para implementar un conversor de temperaturas, donde el cliente envía una lectura en grados Celsius en el intervalo [-200,200] y el servidor responde con la temperatura equivalente en grados Fahrenheit. Entregar una descripción de las operaciones para la interacción entre cliente y servidor e incluye tres corridas de ejecución como ejemplo. 
+1. El cliente solicita una conversión, 
+2. El servidor preguntará por el tipo de conversión (°C a °F o viceversa). 
+3. El cliente seleccionará la opción deseada de conversión. 
+4. El servidor preguntará por la cantidad de grados 
+5. El cliente responde con la cantidad deseada para convertir , y por último 
+6. El servidor responde con los grados convertidos. 
