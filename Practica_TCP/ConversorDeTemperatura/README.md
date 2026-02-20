@@ -73,19 +73,6 @@ Luego de establecer conexión el Servidor solicita el tipo de conversión y el v
 
 El cliente envía el mensaje <Entrada del cliente> al servidor, y el servidor responde con la conversión correspondiente de grados.
 
-- Corrida 1
-
-Entrada del cliente:
-```bash
-0
-```
-
-Salida:
-```bash
-Fahrenheit: 32.0
-```
-
-- Corrida 2
-
+Podemos encontrar 2 corridas de ejemplo en el apartado de Ejemplos.
 
 
