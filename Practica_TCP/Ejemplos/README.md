@@ -8,27 +8,24 @@ Para ejecutar los ejemplos proporcionados, se realizaron los siguientes pasos:
 
 1. Se guardaron los archivos:
 
-- UDPClient.java
+- TCPClient.java
 
-- UDPServer.java
-
-- UDPDiscardClient.java
-
-- UDPDiscardServer.java
+- TCPServer.java
 
 2. Se abrió una terminal dentro de la carpeta y se compiló cada archivo mediante los siguientes comandos:
 
 ```bash
-cd Practica_UCP\Ejemplos\Ejemplo1Programa\src
-javac UDPServer.java
-javac UDPClient.java
+cd Practica_TCP\Ejemplos\Ejemplo01\src
+javac TCPServer.java
+javac TCPClient.java
 ```
 
 ```bash
-cd Practica_UCP\Ejemplos\Ejemplo2Programa\src
-javac UDPDiscardServer.java
-javac UDPDiscardClient.java
+cd Practica_TCP\Ejemplos\Ejemplo02\src
+javac TCPServer.java
+javac TCPClient.java
 ```
+
 
 4. Al compilar correctamente, se generaron los archivos .class, lo que indica que la compilación fue exitosa.
 
