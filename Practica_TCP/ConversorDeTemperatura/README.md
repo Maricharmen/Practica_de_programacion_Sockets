@@ -18,7 +18,7 @@ $$
 
 
 $$
-C = (C - 32) \times \frac{5}{9}
+C = (F - 32) \times \frac{5}{9}
 $$
 
 ### Interacción
